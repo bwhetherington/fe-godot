@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cpyld030v5066"]
+
+[ext_resource type="Shader" path="res://src/shaders/MapPaletteShader.gdshader" id="1_amg0w"]
+[ext_resource type="Texture2D" uid="uid://cn7mn7w7sdk3s" path="res://src/materials/map-palettes.png" id="2_mk1da"]
+
+[resource]
+shader = ExtResource("1_amg0w")
+shader_parameter/color = 0
+shader_parameter/is_finished = false
+shader_parameter/palette = ExtResource("2_mk1da")

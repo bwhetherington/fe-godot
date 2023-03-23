@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://je1oyd84513"]
+
+[ext_resource type="FontFile" uid="uid://bgxpvrgalofw" path="res://assets/fonts/gba-fe-dialogue.ttf" id="1_1rsbr"]
+
+[resource]
+default_font = ExtResource("1_1rsbr")
+default_font_size = 13
+Label/colors/font_outline_color = Color(0.12549, 0.12549, 0.12549, 1)
+Label/constants/outline_size = 2
+Label/styles/normal = null

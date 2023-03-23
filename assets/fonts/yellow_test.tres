@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ciw0hpfytkdro"]
+
+[ext_resource type="FontFile" uid="uid://bgxpvrgalofw" path="res://assets/fonts/gba-fe-dialogue.ttf" id="1_2dbiy"]
+
+[resource]
+font = ExtResource("1_2dbiy")
+font_size = 13
+font_color = Color(1, 0.843137, 0.145098, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)

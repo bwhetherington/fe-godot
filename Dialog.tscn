@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Theme" uid="uid://je1oyd84513" path="res://src/themes/DefaultTheme.tres" id="1_ayi53"]
+[ext_resource type="FontFile" uid="uid://dfgtmumwba8tb" path="res://assets/fonts/MyFont-Regular.otf" id="1_jakrc"]
+
+[sub_resource type="Theme" id="Theme_fthjh"]
+default_font = ExtResource("1_jakrc")
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_fthjh")
+
+[node name="Button" type="Button" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_ayi53")
+text = "This is what the text looks like to a layman
+
+fdksj fdskjlf dsjlk fds
+fd sfds 
+fds 
+fds 
+fds fdsfds 
+"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccf5r8h3mx7ep"]
+
+[ext_resource type="Theme" uid="uid://je1oyd84513" path="res://src/themes/DefaultTheme.tres" id="1_f74n5"]
+[ext_resource type="PackedScene" uid="uid://5vyv7a8yxbgr" path="res://src/sprites/HeroMap.tscn" id="2_eis7y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, -36)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -112.0
+offset_top = -111.0
+offset_right = 77.0
+offset_bottom = -88.0
+theme = ExtResource("1_f74n5")
+theme_override_constants/outline_size = 2
+text = "Fire Emblem, Blazing Sword"
+
+[node name="HeroMap" parent="." instance=ExtResource("2_eis7y")]
+position = Vector2(34, -51)
+is_character = true
+
+[node name="HeroMap2" parent="." instance=ExtResource("2_eis7y")]
+position = Vector2(-36, -55)
+is_character = false
