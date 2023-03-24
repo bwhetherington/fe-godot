@@ -23,4 +23,3 @@ is_character = true
 
 [node name="HeroMap2" parent="." instance=ExtResource("2_eis7y")]
 position = Vector2(-36, -55)
-is_character = false

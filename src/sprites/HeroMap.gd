@@ -1,17 +1,13 @@
-extends AnimatedSprite2D
+extends Character
 
 var velocity: Vector2 = Vector2(0, 0)
-var speed: float = 48
+var tile_speed: float = 48
 var color: int = 0
 
 @export var is_character: bool = false
 
-func _process(delta: float) -> void:
-	if animation == "stand":
-		set_frame(AnimationClock.animation_index)
-
 func _input(event: InputEvent) -> void:
-	if is_character:
+	if not is_character:
 		return
 	
 	if event.is_action_pressed("ui_accept"):
@@ -19,38 +15,18 @@ func _input(event: InputEvent) -> void:
 		color %= 2
 		material.set_shader_parameter("color", color)
 
-func _physics_process(delta: float) -> void:
-	if is_character:
-		return
-	
-	velocity.x = 0
-	velocity.y = 0
-	
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-		
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-		
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-	
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-		
-	velocity = velocity.normalized()
-		
-	flip_h = false
-	if velocity.x < 0:
-		play("walk_left")
-	elif velocity.x > 0:
-		play("walk_left")
-		flip_h = true
-	elif velocity.y > 0:
-		play("walk_down")
-	elif velocity.y < 0:
-		play("walk_up")
-	else:
-		play("stand")
-	
-	transform.origin += velocity * delta * speed
+	if not is_moving and is_character:
+		var target_offset := Vector2i(0, 0)
+		if event.is_action_pressed("ui_left"):
+			target_offset.x -= 5
+			
+		if event.is_action_pressed("ui_right"):
+			target_offset.x += 5
+			
+		if event.is_action_pressed("ui_up"):
+			target_offset.y -= 5
+			
+		if event.is_action_pressed("ui_down"):
+			target_offset.y += 5
+			
+		_move_to_tile(_get_tile_position() + target_offset)
