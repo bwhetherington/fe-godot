@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccf5r8h3mx7ep"]
 
 [ext_resource type="Theme" uid="uid://je1oyd84513" path="res://src/themes/DefaultTheme.tres" id="1_f74n5"]
-[ext_resource type="PackedScene" uid="uid://5vyv7a8yxbgr" path="res://src/sprites/HeroMap.tscn" id="2_eis7y"]
+[ext_resource type="PackedScene" uid="uid://c8m1qkc7cu0w4" path="res://src/character/Character.tscn" id="2_bdwon"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,9 +17,5 @@ theme = ExtResource("1_f74n5")
 theme_override_constants/outline_size = 2
 text = "Fire Emblem, Blazing Sword"
 
-[node name="HeroMap" parent="." instance=ExtResource("2_eis7y")]
-position = Vector2(34, -51)
-is_character = true
-
-[node name="HeroMap2" parent="." instance=ExtResource("2_eis7y")]
-position = Vector2(-36, -55)
+[node name="Character" parent="." instance=ExtResource("2_bdwon")]
+position = Vector2(-2, -22)

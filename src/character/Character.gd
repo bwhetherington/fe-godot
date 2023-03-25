@@ -1,16 +1,10 @@
-class_name CharacterTest
-extends AnimatedSprite2D
+class_name Character
+extends Node2D
 
-@export var move: int = 5
-@export var life: int = 20
-@export var strength: int = 5 
-@export var magic: int = 5
-@export var dexterity: int = 5
-@export var speed: int = 5
-@export var luck: int = 5
-@export var defense: int = 5
-@export var resistance: int = 5
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var stats: Stats
 
+var tile: Vector2i = Vector2i(0, 0)
 var slide_duration: float = 1.2
 var start_position: Vector2
 var end_position: Vector2
@@ -23,10 +17,10 @@ func _ready() -> void:
 	set_tile(x, y)
 		
 func set_tile(x: int, y: int) -> void:
-	transform.origin = Vector2(x * 16, y * 16)
+	sprite.transform.origin = Vector2(x * 16, y * 16)
 
 func _get_position() -> Vector2:
-	return transform.origin
+	return sprite.transform.origin
 	
 func _get_tile_position() -> Vector2i:
 	var pos = _get_position()
@@ -48,12 +42,12 @@ func _move_to_tile(tile: Vector2i) -> void:
 func _stop_moving() -> void:
 	move_time = 0
 	is_moving = false
-	flip_h = false
-	play("stand")
+	sprite.flip_h = false
+	sprite.play("stand")
 	
 func _process(delta: float) -> void:
-	if animation == "stand" or animation == "active":
-		set_frame(AnimationClock.animation_index)
+	if sprite.animation == "stand" or sprite.animation == "active":
+		sprite.set_frame(AnimationClock.animation_index)
 	if is_moving:
 		move_time += delta
 		print(move_time)
@@ -70,15 +64,15 @@ func _process(delta: float) -> void:
 		# Compute direction and play animation
 		var direction := end_position - start_position
 		var anim_name := "walk_"
-		flip_h = false
+		sprite.flip_h = false
 		if direction.x < 0:
 			anim_name += "left"
 		elif direction.x > 0:
 			anim_name += "right"
-			flip_h = true
+			sprite.flip_h = true
 		elif direction.y < 0:
 			anim_name += "up"
 		elif direction.y > 0:
 			anim_name += "down"
 			
-		play(anim_name)
+		sprite.play(anim_name)

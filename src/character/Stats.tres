@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://ur55wck6udnw"]
+
+[ext_resource type="Script" path="res://src/character/Stats.gd" id="1_1h4os"]
+
+[resource]
+script = ExtResource("1_1h4os")
+move = 5
+life = 20
+strength = 5
+magic = 5
+dexterity = 5
+speed = 5
+luck = 5
+defense = 5
+resistance = 5

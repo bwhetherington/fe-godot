@@ -1,14 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5vyv7a8yxbgr"]
+[gd_scene load_steps=3 format=3 uid="uid://5vyv7a8yxbgr"]
 
 [ext_resource type="Material" uid="uid://cpyld030v5066" path="res://src/materials/MapPaletterMaterial.tres" id="1_8lu5t"]
-[ext_resource type="SpriteFrames" uid="uid://dnh7pimfnrcje" path="res://src/sprites/frames/MapHeroFrames.tres" id="1_l2a7i"]
 [ext_resource type="Script" path="res://src/sprites/HeroMap.gd" id="2_ot1oh"]
 
-[node name="HeroMap" type="AnimatedSprite2D"]
+[node name="HeroMap" type="Node2D"]
 material = ExtResource("1_8lu5t")
 position = Vector2(-2, -10)
-sprite_frames = ExtResource("1_l2a7i")
-animation = &"stand"
-autoplay = "stand"
-frame_progress = 0.947938
 script = ExtResource("2_ot1oh")
